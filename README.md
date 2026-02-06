@@ -1,28 +1,32 @@
-# Generator fikcyjnych danych osobowych  
+# Fictional Personal Data Generator
 
-Niniejsza aplikacja służy do generowania listy fikcyjnych danych osobowych i eksportowania ich do pliku Excela (w formacie XLS lub XLSX). Liczba generowanych osób oraz preferowany format pliku podawane są przez użytkownika w interfejsie graficznym aplikacji.  
+This application is used to generate a list of fictional personal data and export it to an Excel file (in XLS or XLSX format).  
+The number of generated persons and the preferred file format are specified by the user in the graphical user interface of the application.
 
-## Generowane elementy  
-* *Imię i nazwisko*  
-  Losowo tworzone są kombinacje imion i nazwisk z list najpopularniejszych imion i nazwisk w Polsce, z uwzględnieniem form żeńskich i męskich.
-* *Płeć*  
-  Losowana jest płeć - kobieta/mężczyzna, zgodna z imieniem i nazwiskiem.
-* *Adres zamieszkania*  
-  Obejmuje nazwę ulicy, numer budynku, numer mieszkania oraz nazwę miasta lub wsi. Dane generowane są z listy nazw istniejących ulic oraz z uwzględnieniem populacji miast w Polsce.
-* *Data urodzenia*  
-  Losowane są daty urodzenia zawierające się w realistycznych ramach czasowych.
-* *Numer telefonu*  
-  Tworzone są numery telefonów zgodne z obowiązujacym w Polsce formatem i unikalne dla każdej osoby.
-* *Numer PESEL*  
-  Tworzone są numery PESEL zgodne z obowiązującym formatem i z pozostałymi danymi osoby (data urodzenia, płeć). Pozostałe cyfry numeru PESEL są losowane, ale z zachowanym warunkiem unikalności.
-* *Relacje pokrewieństwa i małżeństwa*  
-  Losowane i przypisywane są relacje między wygenerowanymi osobami. Możliwe relacje: ojciec, matka, dzieci, siostry, bracia, mąż/żona.
+## Generated elements
+* *First and last name*  
+  Combinations of first names and last names are generated randomly from lists of the most popular first names and surnames in Poland, taking into account both female and male forms.
+* *Gender*  
+  Gender is randomly assigned — female/male — and is consistent with the first and last name.
+* *Residential address*  
+  Includes the street name, building number, apartment number, and the name of a city or village. The data is generated based on a list of existing street names and takes into account the population sizes of cities in Poland.
+* *Date of birth*  
+  Dates of birth are randomly generated within realistic time ranges.
+* *Phone number*  
+  Phone numbers are generated in accordance with the format currently used in Poland and are unique for each person.
+* *PESEL number*  
+  PESEL numbers are generated in accordance with the valid format and are consistent with the remaining personal data (date of birth, gender). The remaining digits of the PESEL number are generated randomly, while maintaining the uniqueness constraint.
+* *Kinship and marriage relationships*  
+  Relationships between generated persons are randomly generated and assigned. Possible relationships include: father, mother, children, sisters, brothers, husband/wife.
 
-## Interfejs użytkownika  
-* Miejsce do wpisania liczby generowanych osób z zakresu 100 - 1 000 000.
-* Wybór typu pliku XLS/XLSX z informacją o możliwym eksporcie do pliku XLS tylko do 64 000 osób.
-* Przycisk "Uruchom"
-* W przypadku wpisania błędnej liczby osób wyświetlany jest odpowiedni komunikat.
+## User interface
+* A field for entering the number of generated persons in the range of 100–1,000,000.
+* Selection of the XLS/XLSX file type, with information that exporting to the XLS format is only possible for up to 64,000 persons.
+* “Run” button.
+* If an invalid number of persons is entered, an appropriate message is displayed.
 
-## Raport z wydajności aplikacji  
-W interfejsie użytkownika znajduje się okno, w którym wypisywane są wyniki pomiarów czasu działania aplikacji dla poszczególnych rozmiarów zadania, jeden pod drugim. Czas kompilacji w milisekundach wyraża się wzorem: 0.1 * n * a, gdzie  5 > a > 0.2, n jest liczba osób do wygenerowania. Wzór może słabo działać dła małych n, ale wtedy czas nas średnio interesuje.
+## Application performance report
+The user interface contains a window in which the results of the application runtime measurements for individual task sizes are displayed, one below another.  
+The compilation time in milliseconds is expressed by the formula:  
+**0.1 * n * a**, where **5 > a > 0.2**, and **n** is the number of persons to be generated.  
+The formula may work poorly for small values of **n**, but in such cases the execution time is of little interest.
